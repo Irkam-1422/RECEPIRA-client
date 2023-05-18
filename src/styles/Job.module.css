@@ -1,0 +1,28 @@
+.wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    margin: 30px 0;
+}
+
+.avatar {
+    width: 200px;
+    height: 200px;
+    background: #ccc;
+}
+
+.info {
+    margin: 0 30px;
+}
+
+.desc {
+    margin: 15px 0;
+}
+
+.btn {
+    margin: 15px 0;
+}

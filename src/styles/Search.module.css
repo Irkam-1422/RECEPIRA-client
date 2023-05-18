@@ -1,0 +1,153 @@
+body {
+    width: 80%;
+}
+
+.td {
+    height: 60px;
+    padding: 55px 35px 0 25px;
+    border: 3px solid #fff;    
+    width: 33%;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    margin: 30px 0;
+    margin-bottom: 50px;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.peopleBlock {
+    display: flex;
+    flex-direction: row;
+}
+
+.postsWrap {
+    background: #ccc;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 15px;
+    margin-bottom: 10px;
+    padding-right: 0;
+}
+
+.peopleAvatar {
+    width: 130px;
+    height: 130px;
+    margin-right: 15px;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+.peoplePost {
+    background: white;
+    width: 150px;
+    height: 190px;
+    margin-right: 15px;
+}
+
+.textCenter {
+    text-align: center;
+}
+
+.flexCol {
+    display: flex;
+    flex-direction: column;
+}
+
+.jobWrap {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.jobAvatar {
+    width: 200px;
+    height: 200px;
+    background: #ccc;
+}
+
+.jobInfo {
+    margin-top: -15px;
+}
+
+.restAvatar {
+    width: 130px;
+    height: 130px;
+    background: #ccc;
+}
+
+.restWrap {
+    display: flex;
+    margin-bottom: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.restInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 50;
+    width: 50%;
+    margin-top: -10px;
+}
+
+.restBtn {
+    font-size: 12px;
+    padding: 4px 8px;
+    margin-right: 5px;
+}
+
+.h3 {
+    margin: 0;
+}
+
+.allWrap {
+    display: flex;
+    flex-wrap: wrap;
+    background: #ccc;
+    padding: 10px 0px 0px 10px;
+}
+
+.allPost {
+    background: white;
+    width: 150px;
+    height: 170px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.darken {
+    background: #00000047;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: -9.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbar {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+}
+
+.inputDiv {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row;
+}

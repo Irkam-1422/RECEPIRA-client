@@ -1,0 +1,92 @@
+header {
+    display: flex;
+    margin-bottom: 15px;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background: #fff;
+    height: 50px;
+}
+
+table {
+    width: 100%;
+    /* background: rgb(237, 236, 236); */
+}
+
+tr {
+    background: rgb(237, 236, 236);
+}
+
+td {
+    font-size: 20px;
+    border-bottom: 1px solid #ccc;
+    padding: 5px 10px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.td1 {
+    width: 10%;
+    padding-left: 15px;
+}
+
+.td3 {
+    padding-left: 30px;
+}
+
+.next {
+    padding: 15px;
+}
+
+.step {
+    width: 90px;
+    border: 1px solid #ccc;
+    /* padding: 12px 15px; */
+    font-size: 20px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+    border-radius: 10%;
+    margin-top: 15px;
+}
+
+.container {
+    width: 70vw;
+}
+
+.image {
+    width: 100%;
+    height: 200px;
+    background: #ccc;
+}
+
+.author {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 30px;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+    border-radius: 50%;
+}
+
+.title {
+    text-align: center;
+}
+
+.name {
+    position: relative;
+    left: -130px;
+    top: -20px;
+}
