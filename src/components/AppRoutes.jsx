@@ -17,7 +17,8 @@ import { Job } from './Job'
 import { Resume } from './Resume'
 import io from 'socket.io-client'
 
-const socket = io.connect('http://localhost:4000')
+//const socket = io.connect('http://localhost:4000') 
+const socket = io.connect('https://recep-ira-server.vercel.app/') 
 
 export const AppRoutes = () => {
 
