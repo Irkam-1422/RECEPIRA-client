@@ -32,32 +32,57 @@ const socket = io.connect('http://localhost:4000')
 //   jobs: [{},{},{}]
 // }]
 
-export const Restaurants = () => {
+export const Restaurants = ({open, result}) => {
 
   const [restaurants,setRestaurants] = useState([])
 
   useEffect(() => {
-    socket.emit('getRestaurants')
-    socket.on('showRestaurants', (restaurants) => {
-      setRestaurants(restaurants)
-    })
+    if (open) {
+      socket.emit('getRestaurants')
+      socket.on('showRestaurants', (restaurants) => {
+        setRestaurants(restaurants)
+      })
+    }
   }, [])
 
   return (
     <div>
-      {restaurants.map(restaurant => {
+      {open && restaurants.map(restaurant => {
         return (
           <div className={styles.restWrap}>
-            <div className={styles.restAvatar}></div>
+            <div className={styles.restAvatar} style={ restaurant.avatar ? 
+               {backgroundImage: `url(${require(`../../images/${restaurant.avatar}`)})`}
+               : {backgroundImage: `url(${require(`../../images/restaurant.png`)})`} } 
+               ></div>
+            <Link to={`/account/:${restaurant._id.toString()}?type=restaurant`} className={styles.restA}>
             <div className={styles.restInfo}>
               <h3 className={styles.h3}>{restaurant.name}</h3>
               <p>{restaurant.locatoin}</p>
               <div className="">
-                <button className={styles.restBtn}> {restaurant.creations.length} creations</button>
-                <button className={styles.restBtn}>{restaurant.jobs.length} jobs</button>
+                <button className={styles.sm}> {restaurant.creations.length} creations</button>
+                <button className={styles.sm}>{restaurant.jobs.length} jobs</button>
               </div>
             </div>
+            </Link>
             <button>+ Follow</button>
+          </div>
+        )  
+      })}
+      {!open && result.map(restaurant => {
+        return (
+          <div className={styles.restWrap}>
+            <div className={styles.restAvatar}></div>
+            <Link to={`/account/:${restaurant._id.toString()}?type=restaurant`} className={styles.restA}>
+            <div className={styles.restInfo}>
+              <h3 className={styles.h3}>{restaurant.name}</h3>
+              <p>{restaurant.locatoin}</p>
+              <div className="">
+                <button className={styles.sm}> {restaurant.creations.length} creations</button>
+                <button className={styles.sm}>{restaurant.jobs.length} jobs</button> 
+              </div>
+            </div>
+            </Link>
+            {/* <button>+ Follow</button> */}
           </div>
         )  
       })}

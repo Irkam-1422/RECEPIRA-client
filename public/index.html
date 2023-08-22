@@ -24,6 +24,10 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap" rel="stylesheet">
+    
     <title>React App</title>
   </head>
   <body>
@@ -34,6 +38,48 @@
       html {
           display: flex;
           justify-content: center;
+          /* background: #e4f0df; */
+          background: linear-gradient(180deg, #edf4ea, #edfae800);
+          min-height: 100vh;
+          height: fit-content;
+      }
+      * {
+        font-family: 'Lato', sans-serif;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+
+      button {
+        margin: 10px 2.5px;
+        padding: 10px 15px;
+        color: #4ba428;
+        border: 1px solid;
+        border-radius: 5px;
+        background: #edfae8;
+        cursor: pointer; 
+      }
+
+      .disabled {
+        background: rgb(245, 244, 244);
+        color: #aaa;
+      }
+
+      .purple {
+        background: #ede9fa;
+        color: #2e2070;
+      }
+
+      .pink {
+        background: #fff0f8;
+        color: #9b1e5f;
+      }
+
+      .completed {
+        background: #4ba428;
+        color: #edfae8;
+        border: 1px solid #4ba428;
       }
     </style>
     <!--

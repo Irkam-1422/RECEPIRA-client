@@ -11,6 +11,15 @@ input[type="text"] {
     outline: none;
 }
 
+input[type="submit"] {
+    padding: 5px 10px;
+    font-size: 16px;
+    color: #2f601c;
+    border: 1px solid;
+    border-radius: 3px;
+    background: #2f601c30;
+}
+
 textarea {
     width: 100%;
     margin-top: 15px;
@@ -20,10 +29,31 @@ table {
     margin-top: -15px;
 }
 
+.title {
+    padding-left: 7px;
+    font-size: 24px;
+    border: none;
+    border-radius: 4px;
+    width: 98%;
+}
+
+.fileBtn {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -11px;
+    font-size: 25px;
+    cursor: pointer;
+    border: 1px dashed;
+    border-width: medium;
+}
+
 .file {
     height: 100px;
-    background: #ccc;
+    /* background: #ccc; */
     margin-bottom: 15px;
+    background-size: cover;
+    position: relative;
 }
 
 .block {
@@ -55,4 +85,13 @@ table {
     padding-left: 0;
     font-size: 25px;
     border: none;
+}
+
+.submit {
+    color: #2f601c;
+    border: 1px solid;
+    margin: 15px 0;
+    font-size: 20px;
+    padding: 7px;
+    background: #2f601c47;
 }

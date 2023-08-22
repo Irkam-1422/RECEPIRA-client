@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import styles from '../styles/Post.module.css'
-import { io } from 'socket.io-client'
+//import { io } from 'socket.io-client'
 import { useEffect } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 
-const socket = io.connect('http://localhost:4000')
+//const socket = io.connect('http://localhost:4000')
 
 const  FIELD = {
     POSITION: "position",
@@ -15,7 +15,7 @@ const  FIELD = {
     DESCRIPTION: "description"
 }
 
-export const PostJob = (userId) => {
+export const PostJob = ({socket,userId}) => {
 
 const {POSITION,LOCATION,SALARY,FROM,FULLTIME,DESCRIPTION} = FIELD
 
@@ -35,6 +35,7 @@ const handleChange = ({target: {value, name}}) => {
 
 const handleSubmit = (e) => {
     e.preventDefault()
+    values[DESCRIPTION] = `<pre>${values[DESCRIPTION]}</pre>`
     socket.emit('post-job', {values, userId})
 }
 

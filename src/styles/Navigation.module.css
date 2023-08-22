@@ -1,0 +1,8 @@
+.postBtn {
+    width: 100px;
+}
+.postBtn:hover {
+    width: 100px;
+    position: relative;
+    box-shadow: 0px 0px 5px 1px;
+}

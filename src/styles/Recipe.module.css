@@ -1,21 +1,29 @@
-header {
+.header {
     display: flex;
     margin-bottom: 15px;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
-    background: #fff;
+    background: linear-gradient(180deg, #eef5eb, white);
     height: 50px;
+    width: 100vw;
+    margin-left: -10vw;
+    padding: 0 30px;
+    box-sizing: border-box;
+}
+
+.header_box {
+    display: flex;
+    flex-direction: row;
+    border: 3px solid white;
+    width: 90vw;
+    margin-left: -5vw;
 }
 
 table {
     width: 100%;
     /* background: rgb(237, 236, 236); */
-}
-
-tr {
-    background: rgb(237, 236, 236);
 }
 
 td {
@@ -24,20 +32,56 @@ td {
     padding: 5px 10px;
 }
 
+.comment {
+    background-image: url('../images/recipe-actions/comment.png');
+    background-size: 33px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 44px;
+    height: 40px;
+}
+.save {
+    background-image: url('../images/recipe-actions/save.png');
+    background-size: 28px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 44px;
+    height: 40px;
+}
+.like {
+    background-image: url('../images/recipe-actions/like.png');
+    background-size: 30px;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 44px;
+    height: 40px;
+}
+
 .row {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    border-bottom: 1px solid #ccc; 
 }
 
 .td1 {
     width: 10%;
     padding-left: 15px;
+    border-right: 1px solid #ccc;
+}
+
+.td2 {
+    width: 6%;
+    border-right: 1px solid #ccc;
 }
 
 .td3 {
     padding-left: 30px;
+}
+
+.td1, .td2, .td3 {
+    background: #edfae8;
 }
 
 .next {
@@ -45,16 +89,20 @@ td {
 }
 
 .step {
-    width: 90px;
-    border: 1px solid #ccc;
+    width: 25px;
+    height: 25px;
+    border: 1px solid;
     /* padding: 12px 15px; */
+    color: #4ba428;
+    background: #edfae8;
     font-size: 20px;
     padding: 10px;
     display: flex;
     justify-content: center;
     margin: 5px 0;
-    border-radius: 10%;
+    border-radius: 50%;
     margin-top: 15px;
+
 }
 
 .container {
@@ -63,25 +111,80 @@ td {
 
 .image {
     width: 100%;
-    height: 200px;
+    height: 400px;
     background: #ccc;
+    background-size: cover;
+    flex: 67%;
+}
+
+.info {
+    background: white;
+    padding: 0 15px;
+    flex: 50%;
+}
+
+.ctgBtn {
+    margin-left: 10px;
+    padding: 10px 15px;
+    border-radius: 5px;
 }
 
 .author {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
     padding-right: 30px;
+    flex-direction: row;
+    margin-bottom: 30px;
+    margin: 15px 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px; 
 }
 
 .avatar {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background: #ccc;
     border-radius: 50%;
+    background-size: cover;
+}
+
+.author_info {
+    margin-left: 17px;
+}
+
+.author_name {
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.follow {
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding: 6px 10px;
+}
+
+.description {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #eff5ed;
+}
+
+.hashtag {
+    background: #ede9fa;
+    border: 1px solid;
+    border-radius: 22px;
+    color: #2e2070;
+    margin: 2.5px;
+    padding: 8px 12px; 
 }
 
 .title {
+    text-align: center;
+}
+
+.titleSm {
+    flex: 50%;
     text-align: center;
 }
 
@@ -89,4 +192,56 @@ td {
     position: relative;
     left: -130px;
     top: -20px;
+}
+
+.btn {
+    margin: 10px 2.5px;
+    padding: 10px 15px;
+    color: #4ba428;
+    border: 1px solid;
+    border-radius: 5px;
+    background: #edfae8;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #e2eedd;
+}
+
+.hash {
+    background: #ede9fa;
+    border: 1px solid;
+    border-radius: 12px;
+    color: #2e2070;
+    margin: 0 2.5px;
+}
+
+.instrs {
+    display: grid;
+    /* grid-template-columns: auto auto auto; */
+}
+
+.instr {
+    background: #f8f6f6;
+    margin: 5px;
+    padding: 15px;
+    border-radius: 10px; 
+}
+
+.textarea {
+    width: 100%;
+    margin-top: 15px;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.input {
+    margin: 0px;
+    width: 67%;
+    margin-left: -8px;
+}
+
+.descriptionTxtar {
+    margin-top: 0;
 }

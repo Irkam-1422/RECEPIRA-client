@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { Navigation } from './Navigation'
 import styles from '../styles/Profile.module.css'
-import io from 'socket.io-client'
+//import io from 'socket.io-client'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { User } from './profile/User'
 import { Restaurant } from './profile/Restaurant'
 
 
-const socket = io.connect('http://localhost:4000')
+//const socket = io.connect('http://localhost:4000')
 
-export const Profile = ({returnId, returnType}) => {
+export const Profile = ({socket, returnId, returnType, returnUnread, returnNotifications}) => {
 
   const { search } = useLocation()
   const [type,setType] = useState()
@@ -54,6 +54,8 @@ export const Profile = ({returnId, returnType}) => {
 
       console.log('Client: emmiting getPosts', user._id.toString());
       socket.emit('getPosts', user._id.toString())
+      returnUnread(user.messages)
+      returnNotifications(user.notification)
     })
     socket.on('showRestaurant',(restaurant) => {
       console.log('Client: recieving showRestaurant', restaurant);
@@ -63,8 +65,19 @@ export const Profile = ({returnId, returnType}) => {
       console.log('Client: emmiting getPosts', restaurant._id.toString());
       socket.emit('getPosts', restaurant._id.toString())
       socket.emit('getJobs', restaurant._id.toString())
+      returnUnread(restaurant.messages)
     })
   },[]) 
+
+  const returnAvatar = (file) => {
+    console.log(file)
+    console.log(file.name)
+    console.log(user)
+  }
+
+  const returnLogOut = () => {
+    returnId(null)
+  }
 
   // useEffect(() => {
   //   socket.on('showCreations', ({creations}) => {
@@ -89,7 +102,7 @@ export const Profile = ({returnId, returnType}) => {
 
   return (
     <div className="">
-      {type == 'user' && <User user={user} creations={creations} current={true}/>}
+      {type == 'user' && <User user={user} creations={creations} current={true} returnAvatar={returnAvatar} returnLogOut={returnLogOut}/>}
       {type == 'restaurant' && <Restaurant restaurant={user} creations={creations} jobs={jobs} current={true}/>}
     </div>
   )

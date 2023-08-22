@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
-import io from 'socket.io-client'
+import styles from '../styles/LogIn.module.css'
+// import io from 'socket.io-client'
 
-const socket = io.connect('http://localhost:4000')
+// const socket = io.connect('http://localhost:4000')
 
 const  FIELD = {
     EMAIL: "email",
     PASSWORD: "password"
 }
 
-export const LogIn = () => {
+export const LogIn = ({socket}) => {
 
   const {EMAIL,PASSWORD} = FIELD  
   const [values,setValues] = useState({[EMAIL]: "", [PASSWORD]: ""})
@@ -56,41 +57,51 @@ export const LogIn = () => {
   }
 
   return (
-    <div>
-        <h1>Welcome back!</h1>
-        <form onSubmit={handleSubmission}>
-        {params == 'error' && <div className="">
-            <p style={{color:'red'}}>Your email or password are incorrect. Please, try again!</p>    
-        </div>    }
-        {params == 'exists' && <div className="">
-            <p style={{color:'red'}}>This user already exists. Log in!</p>    
-        </div>    }
-        <div className="">
-            <input type="text" 
-                   name="email" 
-                   placeholder="Email"
-                   value={values[EMAIL]}
-                   onChange={handleChange} 
-                   autoComplete="off"
-                   required />
+    <div className={styles.outer}>
+      <div className={styles.inner}>
+        <div className={styles.sidebar}>
+          <h1>Welcome back!</h1>
         </div>
-        <div className="">
-            <input type="password" 
-                   name="password" 
-                   placeholder="Password"
-                   value={values[PASSWORD]}
-                   onChange={handleChange} 
-                   autoComplete="off"
-                   required />
-        </div>
-        <div className="">
-            Don't have an account yet? 
-            <Link to={'/sign-up'}>
-               <span>Sign Up</span>
-            </Link>
-        </div>
-            <input type="submit" value="Next" onClick={handleSubmission}/>
-    </form>
+          <form onSubmit={handleSubmission} className={styles.form}>
+            <h2>Log In</h2>
+          {params == 'error' && <div className="">
+              <p style={{color:'red'}}>Your email or password are incorrect. Please, try again!</p>    
+          </div>    }
+          {params == 'exists' && <div className="">
+              <p style={{color:'red'}}>This user already exists. Log in!</p>    
+          </div>    }
+          <div className="">
+              <input type="text" 
+                    name="email" 
+                    placeholder="Email"
+                    value={values[EMAIL]}
+                    onChange={handleChange} 
+                    autoComplete="off"
+                    required 
+                    className={styles.input}/>
+          </div>
+          <div className="">
+              <input type="password" 
+                    name="password" 
+                    placeholder="Password"
+                    value={values[PASSWORD]}
+                    onChange={handleChange} 
+                    autoComplete="off"
+                    required 
+                    className={styles.input}/>
+          </div>
+          <div className={styles.su}>
+              Don't have an account yet? 
+              <Link to={'/sign-up'}>
+                <span>Sign Up</span>
+              </Link>
+          </div>
+              <input type="submit" 
+                     value="Next" 
+                     onClick={handleSubmission}
+                     className={`${styles.input} ${styles.submit}`}/>
+        </form>
+      </div>
     </div>
   )
 }

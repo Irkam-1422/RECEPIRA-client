@@ -7,6 +7,30 @@ body {
     padding: 55px 35px 0 25px;
     border: 3px solid #fff;    
     width: 33%;
+    background: #cccccc9c;
+    background-size: 133px;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.serachCategory {
+    flex: 25%;
+}
+
+.oneLine {
+    display: flex;
+    align-items: center;
+}
+
+.searchInput {
+    margin-bottom: 0px;
+    border: 1px solid #4ba428;
+    border-radius: 5px;
+}
+
+.searchBtn {
+    position: relative;
+    top: 10px;
 }
 
 .header {
@@ -25,13 +49,14 @@ body {
 .peopleBlock {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    border-top: 1px solid #ccc;
 }
 
 .postsWrap {
-    background: #ccc;
+    /* background: #ccc; */
     display: flex;
     width: 100%;
-    justify-content: space-between;
     padding: 15px;
     margin-bottom: 10px;
     padding-right: 0;
@@ -43,6 +68,7 @@ body {
     margin-right: 15px;
     background: #ccc;
     border-radius: 50%;
+    background-size: cover;
 }
 
 .peoplePost {
@@ -50,6 +76,7 @@ body {
     width: 150px;
     height: 190px;
     margin-right: 15px;
+    background-size: cover;
 }
 
 .textCenter {
@@ -68,12 +95,15 @@ body {
     width: 100%;
     justify-content: space-between;
     margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ccc;
 }
 
 .jobAvatar {
     width: 200px;
     height: 200px;
     background: #ccc;
+    background-size: cover;
 }
 
 .jobInfo {
@@ -83,7 +113,9 @@ body {
 .restAvatar {
     width: 130px;
     height: 130px;
-    background: #ccc;
+    background-size: contain;
+    background-color: white;
+    background-repeat: no-repeat;
 }
 
 .restWrap {
@@ -91,6 +123,12 @@ body {
     margin-bottom: 5px;
     justify-content: space-between;
     align-items: center;
+    border-top: 1px solid #ccc;
+    padding-top: 5px;
+}
+
+.restA {
+    width: 50%;
 }
 
 .restInfo {
@@ -116,16 +154,25 @@ body {
 .allWrap {
     display: flex;
     flex-wrap: wrap;
-    background: #ccc;
+    /* background: #ccc; */
     padding: 10px 0px 0px 10px;
+    margin-bottom: 50px;
 }
 
 .allPost {
     background: white;
-    width: 150px;
-    height: 170px;
+    width: 200px;
+    height: 250px;
     margin-right: 10px;
     margin-bottom: 10px;
+    background-size: cover;
+    border: 3px solid white;
+}
+
+.postH3 {
+    background: white;
+    margin: 0;
+    font-weight: 100;
 }
 
 .darken {
@@ -144,10 +191,34 @@ body {
     flex-direction: column;
     width: 100%;
     position: relative;
+    height: 0;
+}
+
+.searchbarBtns {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    top: -25px;
+}
+
+.searchbarBtn {
+    margin: 0;
+    color: rgb(122, 121, 121);
+    background: #eee;
 }
 
 .inputDiv {
     display: flex;
     align-items: flex-end;
     flex-direction: row;
+    align-items: flex-end;
+    position: relative;
+    top: -25px;
+}
+
+.sm {
+    color: #2e2070;
+    background: #ede9fa;
+    padding: 6px 8px;
 }

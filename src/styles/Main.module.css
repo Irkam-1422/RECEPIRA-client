@@ -1,0 +1,42 @@
+.outer {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.inner {
+    border: 1px solid #4ba428;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    border-radius: 10px;
+    background: white;
+    width: 3;
+    height: 240px;
+    width: 200px;
+}
+.h2 {
+    color: #2f601c;
+    margin-top: 0px;
+    font-size: 40px;
+    font-weight: 100;
+}
+.btn {
+    padding: 5px 10px;
+    font-size: 17px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.su {
+    color: #edfae8;
+    border: 1px solid #2f601c;
+    background: #2f601c;
+}
+.li {
+    background: #e4f0df;
+    color: #4ba428;
+    border: 1px solid;
+}

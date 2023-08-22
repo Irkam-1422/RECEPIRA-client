@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom'
-import io from 'socket.io-client'
+import styles from '../styles/LogIn.module.css'
+// import io from 'socket.io-client'
 
-const socket = io.connect('http://localhost:4000')
+// const socket = io.connect('http://localhost:4000')
 
 const  FIELD = {
     NAME: "name",
@@ -10,7 +11,7 @@ const  FIELD = {
     PASSWORD: "password"
 }
 
-export const SuStep2 = () => {
+export const SuStep2 = ({socket}) => {
 
   const {NAME,EMAIL,PASSWORD} = FIELD  
   const [values,setValues] = useState({[NAME]: "", [EMAIL]: "", [PASSWORD]: ""})
@@ -55,11 +56,18 @@ export const SuStep2 = () => {
   }
 
   return (
-    <>
-    {type == 'cook' && <form onSubmit={handleSubmission}>
+    <div className={styles.outer} >
+      <div >
+    {type == 'cook' && <div className={styles.inner} style={{flexDirection: 'row-reverse'}}>
+        <div className={styles.sidebar}>
+          <h1>Welcome!</h1>
+        </div>
+      <form onSubmit={handleSubmission} className={styles.form}>
+        <h2>Sign Up</h2>
         <div className="">
             <input type="text" 
                    name='name' 
+                   className={styles.input}
                    placeholder='Name'
                    value={values[NAME]}
                    onChange={handleChange} 
@@ -69,6 +77,7 @@ export const SuStep2 = () => {
         <div className="">
             <input type="text" 
                    name='email' 
+                   className={styles.input}
                    placeholder='Email'
                    value={values[EMAIL]}
                    onChange={handleChange} 
@@ -78,18 +87,25 @@ export const SuStep2 = () => {
         <div className="">
             <input type="password" 
                    name='password' 
+                   className={styles.input}
                    placeholder='Password'
                    value={values[PASSWORD]}
                    onChange={handleChange} 
                    autoComplete="off"
                    required />
         </div>
-          <input type="submit" value="Next" onClick={handleSubmission}/>
-    </form>}
-    {type == 'recruiter' && <form onSubmit={handleSubmission}>
+          <input type="submit" value="Next" onClick={handleSubmission} className={`${styles.input} ${styles.submit}`}/>
+      </form>
+    </div>}
+    {type == 'recruiter' && <div>
+        <div className={styles.sidebar}>
+          <h1>Welcome!</h1>
+        </div>
+      <form onSubmit={handleSubmission} className={styles.form}>
         <div className="">
             <input type="text" 
                    name='name' 
+                   className={styles.input}
                    placeholder='Company Name'
                    value={values[NAME]}
                    onChange={handleChange} 
@@ -100,6 +116,7 @@ export const SuStep2 = () => {
             <input type="text" 
                    name='email' 
                    placeholder='Email'
+                   className={styles.input}
                    value={values[EMAIL]}
                    onChange={handleChange} 
                    autoComplete="off"
@@ -109,13 +126,16 @@ export const SuStep2 = () => {
             <input type="password" 
                    name='password' 
                    placeholder='Password'
+                   className={styles.input}
                    value={values[PASSWORD]}
                    onChange={handleChange} 
                    autoComplete="off"
                    required />
         </div> 
-          <input type="submit" value="Next" onClick={handleSubmission}/>
-    </form>}
-    </>
+          <input type="submit" value="Next" onClick={handleSubmission} className={`${styles.input} ${styles.submit}`}/>
+      </form>
+    </div>}
+    </div>
+    </div>
   )
 }

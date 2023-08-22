@@ -1,0 +1,168 @@
+.bd {
+    border: 1px solid;
+}
+
+.main {
+    display: flex;
+    border: 1px solid; 
+    height: 650px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.chat_header {
+    border-bottom: 1px solid;
+    height: 41px;
+    text-align: center;
+    line-height: 2.5;
+    background: #2f601c75;
+}
+
+.users_header {
+    border-bottom: 1px solid;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    background: #2f601c69;
+}
+
+.new {
+    margin-left: 33px;
+}
+
+.chat_container {
+    border: 1px solid;
+    width: 70%;
+}
+
+.users_container {
+    border: 1px solid;
+    width: 30%;
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    background: #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-size: cover;
+}
+
+.user {
+    height: 40px;
+    border-bottom: 1px solid;
+    display: flex;
+    padding: 5px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.selected {
+    background: #eee;
+}
+
+.input {
+    width: 90%;
+    margin-left: 2.5%;
+}
+
+.chatbox {
+    display: flex;
+    height: 93.5%;
+    flex-direction: column;
+}
+
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    /* row-gap: 20px; */
+    row-gap: 5px;
+  }
+  
+  .message {
+    width: max-content;
+    display: flex;
+    flex-direction: column;
+    row-gap: 5px;
+    width: 100%;
+  }
+  
+  .text {
+    padding: 10px;
+    color: #fff;
+    max-width: 50%;
+    font-weight: 100;
+    border-radius: 20px;
+    font-size: 16px;
+  }
+  
+  .username {
+    font-size: 14px;
+    color: rgb(176, 176, 176);
+  }
+  
+  .username {
+    align-items: flex-start;
+  }
+  
+  .username .text {
+    /* background: #514c4c; */
+    background: #1a1818;
+  }
+  
+  .username .username {
+    padding-left: 10px;
+  }
+  
+  .me {
+    align-items: flex-end;
+  }
+  
+  .me .text {
+    /* background: #7495e5; */
+    background: #2f601c;
+  }
+  
+  .me .username {
+    padding-right: 10px;
+  }
+
+  .msg_container {
+    height: 100%;
+    overflow: scroll;
+    padding: 5px;
+    background-color: #98b491;
+    opacity: 0.7;
+    background-image:  linear-gradient(135deg, #2f601c99 25%, transparent 25%), linear-gradient(225deg, #7fa174 25%, transparent 25%), linear-gradient(45deg, #b3d5b7 25%, transparent 25%), linear-gradient(315deg, #b3d5b7 25%, #98b491 25%);
+    background-position:  8px 0, 8px 0, 0 0, 0 0;
+    background-size: 8px 8px;
+    background-repeat: repeat;
+  }
+
+  .form {
+    background-color: #98b491;
+    opacity: 0.7;
+    background-image:  linear-gradient(135deg, #2f601c99 25%, transparent 25%), linear-gradient(225deg, #7fa174 25%, transparent 25%), linear-gradient(45deg, #b3d5b7 25%, transparent 25%), linear-gradient(315deg, #b3d5b7 25%, #98b491 25%);
+    background-position:  8px 0, 8px 0, 0 0, 0 0;
+    background-size: 8px 8px;
+    background-repeat: repeat;
+  }
+
+  .unread {
+    background: red;
+    width: 15px;
+    height: 15px;
+    margin-left: 3px;
+    border-radius: 40%;
+    color: white;
+    padding-left: 6px;  
+  }
+
+  .none {
+    display: none;
+  }
+
+  /* pattern */
