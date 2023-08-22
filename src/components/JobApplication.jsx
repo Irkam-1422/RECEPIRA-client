@@ -3,7 +3,7 @@ import { useState } from 'react'
 import styles from '../styles/JobApplication.module.css'
 import io from 'socket.io-client'
 
-const socket = io.connect('http://localhost:4000')
+const socket = io.connect('https://recep-ira-server.vercel.app/') 
 
 const FIELD = {
     NAME: 'name',
